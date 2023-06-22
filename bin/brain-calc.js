@@ -22,7 +22,6 @@ const startCalcGame = () => {
     };
 
     const newOperator = randomOperator();
-    console.log(newOperator);
 
     const calculatedExpression = (num1, num2, operator) => {
       let result;
@@ -43,12 +42,10 @@ const startCalcGame = () => {
     };
     const correctAnswer = calculatedExpression(number1, number2, newOperator);
 
-    console.log(correctAnswer);
-
     const userAnswer = readlineSync.question(`Question: ${number1} ${newOperator} ${number2}
 Your answer: `);
 
-    if (userAnswer === correctAnswer) {
+    if (Number(userAnswer) === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
