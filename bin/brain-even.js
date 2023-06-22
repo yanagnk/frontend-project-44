@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 
-const startGame = () => {
+const startEvenGame = () => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
@@ -30,4 +30,4 @@ Let's try again, ${userName}!`);
   console.log(`Congratulations,${userName}!`);
 };
 
-startGame();
+startEvenGame();
