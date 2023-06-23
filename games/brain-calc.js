@@ -12,8 +12,8 @@ const startCalcGame = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number1 = Math.floor(Math.random() * 101);
-    const number2 = Math.floor(Math.random() * 101);
+    const number1 = Math.floor((Math.random() * 100) + 1);
+    const number2 = Math.floor((Math.random() * 100) + 1);
 
     const getRandomOperator = () => {
       const operators = ['+', '-', '*'];
@@ -37,7 +37,7 @@ const startCalcGame = () => {
           break;
         default:
           return;
-      };
+      }
       return result;
     };
 
