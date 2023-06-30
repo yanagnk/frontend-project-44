@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import _ from 'lodash';
 
 const startCalcGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -12,8 +13,8 @@ const startCalcGame = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number1 = Math.floor((Math.random() * 100) + 1);
-    const number2 = Math.floor((Math.random() * 100) + 1);
+    const number1 = _.random(1, 100);
+    const number2 = _.random(1, 100);
 
     const randomOperator = () => {
       const operators = ['+', '-', '*'];

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import _ from 'lodash';
 
 const startGcdGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -12,8 +13,8 @@ const startGcdGame = () => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number1 = Math.floor((Math.random() * 100) + 1);
-    const number2 = Math.floor((Math.random() * 100) + 1);
+    const number1 = _.random(1, 100);
+    const number2 = _.random(1, 100);
 
     const getDivisors = (num) => {
       const result = [];
