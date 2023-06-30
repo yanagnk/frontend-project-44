@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import _ from 'lodash';
 
 const startEvenGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -12,7 +13,7 @@ const startEvenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number = Math.floor((Math.random() * 100) + 1);
+    const number = _.random(1, 100);
     const isCorrect = (num) => ((num % 2 === 0) ? 'yes' : 'no');
     const correctAnswer = isCorrect(number);
 
