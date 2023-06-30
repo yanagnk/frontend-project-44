@@ -22,6 +22,14 @@ const startPrgGame = () => {
       for (let j = 0; j < randomQuantity; j += 1) {
         result.push(result[j] + step);
       }
+      const number = _.random(1, 100);
+      const result = [number];
+      const step = _.random(2, 9);
+      const randomQuantity = _.random(5, 10);
+
+      for (let j = 0; j < randomQuantity; j += 1) {
+        result.push(result[j] + step);
+      }
       return result;
     };
 
@@ -33,12 +41,17 @@ const startPrgGame = () => {
 
     randomArr[charIndex] = '...';
 
+    randomArr[charIndex] = '...';
+
+    const userAnswer = readlineSync.question(`Question: ${randomArr}
     const userAnswer = readlineSync.question(`Question: ${randomArr}
 Your answer: `);
 
     if (Number(userAnswer) === hiddenChar) {
+    if (Number(userAnswer) === hiddenChar) {
       console.log('Correct!');
     } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenChar}'.
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenChar}'.
 Let's try again, ${userName}!`);
       return;
