@@ -37,7 +37,7 @@ const startCalcGame = () => {
           result = num1 * num2;
           break;
         default:
-          return;
+          console.log('Error');
       }
       return result;
     };

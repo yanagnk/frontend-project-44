@@ -18,9 +18,9 @@ const startGcdGame = () => {
 
     const getDivisors = (num) => {
       const result = [];
-      for (let i = 1; i <= num; i += 1) {
-        if (num % i === 0) {
-          result.push(i);
+      for (let j = 1; j <= num; j += 1) {
+        if (num % j === 0) {
+          result.push(j);
         }
       }
       return result;
@@ -31,10 +31,10 @@ const startGcdGame = () => {
 
     const getCommonDivisorsArr = (arr1, arr2) => {
       const result = [];
-      for (let i = 0; i < arr1.length; i += 1) {
-        for (let j = 0; j < arr2.length; j += 1) {
-          if (arr2[j] === arr1[i]) {
-            result.push(arr2[j]);
+      for (let k = 0; k < arr1.length; k += 1) {
+        for (let l = 0; l < arr2.length; l += 1) {
+          if (arr2[l] === arr1[k]) {
+            result.push(arr2[l]);
           }
         }
       }
@@ -45,9 +45,9 @@ const startGcdGame = () => {
 
     const getGreatestDivisor = (arr) => {
       let result = arr[0];
-      for (let i = 1; i < arr.length; i += 1) {
-        if (arr[i] > result) {
-          result = arr[i];
+      for (let m = 1; m < arr.length; m += 1) {
+        if (arr[m] > result) {
+          result = arr[m];
         }
       }
       return result;
