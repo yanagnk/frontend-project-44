@@ -35,7 +35,7 @@ const startPrgGame = () => {
 
     const userAnswer = readlineSync.question(`Question: ${randomArr.join(' ')} \nYour answer: `);
 
-    if (userAnswer === hiddenChar) {
+    if (Number(userAnswer) === hiddenChar) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenChar}'. \nLet's try again, ${userName}!`);
