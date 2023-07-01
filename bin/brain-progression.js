@@ -27,7 +27,7 @@ const startPrgGame = () => {
 
     const randomArr = getRandomArr();
 
-    const charIndex = _.random(0, randomArr.length);
+    const charIndex = _.random(0, (randomArr.length - 1));
 
     const hiddenChar = randomArr[charIndex];
 
