@@ -42,7 +42,7 @@ const startPrgGame = () => {
       return;
     }
   }
-  console.log(`Congratulations,${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startPrgGame();

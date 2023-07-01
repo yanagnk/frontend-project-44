@@ -26,7 +26,7 @@ const startEvenGame = () => {
       return;
     }
   }
-  console.log(`Congratulations,${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startEvenGame();

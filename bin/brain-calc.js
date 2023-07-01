@@ -52,7 +52,7 @@ const startCalcGame = () => {
       return;
     }
   }
-  console.log(`Congratulations,${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startCalcGame();
