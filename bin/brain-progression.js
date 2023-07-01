@@ -31,9 +31,11 @@ const startPrgGame = () => {
 
     const hiddenChar = randomArr[charIndex];
 
-    randomArr[charIndex] = '...';
+    randomArr[charIndex] = '..';
 
-    const userAnswer = readlineSync.question(`Question: ${randomArr} \nYour answer: `);
+    const randomString = randomArr.join(' ')
+
+    const userAnswer = readlineSync.question(`Question: ${randomString} \nYour answer: `);
 
     if (Number(userAnswer) === hiddenChar) {
       console.log('Correct!');
