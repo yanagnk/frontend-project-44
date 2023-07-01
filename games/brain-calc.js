@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import _ from 'lodash';
 
 const startCalcGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -12,18 +13,18 @@ const startCalcGame = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number1 = Math.floor((Math.random() * 100) + 1);
-    const number2 = Math.floor((Math.random() * 100) + 1);
+    const number1 = _.random(1, 100);
+    const number2 = _.random(1, 100);
 
-    const getRandomOperator = () => {
+    const randomOperator = () => {
       const operators = ['+', '-', '*'];
       const randomIndex = Math.floor(Math.random() * operators.length);
       return operators[randomIndex];
     };
 
-    const newOperator = getRandomOperator();
+    const newOperator = randomOperator();
 
-    const calculateExpression = (num1, num2, operator) => {
+    const calculatedExpression = (num1, num2, operator) => {
       let result;
       switch (operator) {
         case '+':
@@ -36,25 +37,22 @@ const startCalcGame = () => {
           result = num1 * num2;
           break;
         default:
-          return;
+          console.log('Error');
       }
       return result;
     };
+    const correctAnswer = calculatedExpression(number1, number2, newOperator);
 
-    const correctAnswer = calculateExpression(number1, number2, newOperator);
-
-    const userAnswer = readlineSync.question(`Question: ${number1} ${newOperator} ${number2}
-Your answer: `);
+    const userAnswer = readlineSync.question(`Question: ${number1} ${newOperator} ${number2} \nYour answer: `);
 
     if (Number(userAnswer) === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-  Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
       return;
     }
   }
-  console.log(`Congratulations,${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startCalcGame();

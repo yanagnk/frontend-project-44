@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import _ from 'lodash';
 
 const startGcdGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -12,14 +13,14 @@ const startGcdGame = () => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number1 = Math.floor((Math.random() * 100) + 1);
-    const number2 = Math.floor((Math.random() * 100) + 1);
+    const number1 = _.random(1, 100);
+    const number2 = _.random(1, 100);
 
     const getDivisors = (num) => {
       const result = [];
-      for (let i = 1; i <= num; i += 1) {
-        if (num % i === 0) {
-          result.push(i);
+      for (let j = 1; j <= num; j += 1) {
+        if (num % j === 0) {
+          result.push(j);
         }
       }
       return result;
@@ -30,10 +31,10 @@ const startGcdGame = () => {
 
     const getCommonDivisorsArr = (arr1, arr2) => {
       const result = [];
-      for (let i = 0; i < arr1.length; i += 1) {
-        for (let j = 0; j < arr2.length; j += 1) {
-          if (arr2[j] === arr1[i]) {
-            result.push(arr2[j]);
+      for (let k = 0; k < arr1.length; k += 1) {
+        for (let l = 0; l < arr2.length; l += 1) {
+          if (arr2[l] === arr1[k]) {
+            result.push(arr2[l]);
           }
         }
       }
@@ -44,9 +45,9 @@ const startGcdGame = () => {
 
     const getGreatestDivisor = (arr) => {
       let result = arr[0];
-      for (let i = 1; i < arr.length; i += 1) {
-        if (arr[i] > result) {
-          result = arr[i];
+      for (let m = 1; m < arr.length; m += 1) {
+        if (arr[m] > result) {
+          result = arr[m];
         }
       }
       return result;
@@ -54,18 +55,16 @@ const startGcdGame = () => {
 
     const correctAnswer = getGreatestDivisor(commonDivisorsArr);
 
-    const userAnswer = readlineSync.question(`Question: ${number1} ${number2}
-Your answer: `);
+    const userAnswer = readlineSync.question(`Question: ${number1} ${number2}  \nYour answer: `);
 
     if (Number(userAnswer) === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
       return;
     }
   }
-  console.log(`Congratulations,${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startGcdGame();

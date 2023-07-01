@@ -5,4 +5,4 @@ const salutation = () => {
   console.log(`Hello, ${userName}`);
 };
 
-export { salutation };
+export { salutation as default };

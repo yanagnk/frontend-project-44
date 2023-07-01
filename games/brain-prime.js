@@ -17,7 +17,7 @@ const startPrimeGame = () => {
 
     const isPrime = (num) => {
       for (let j = 2; j <= num / 2; j += 1) {
-        if (num % j === 0) {
+        if ((num % j === 0) || (num === 1)) {
           return 'no';
         }
       }
@@ -26,18 +26,16 @@ const startPrimeGame = () => {
 
     const correctAnswer = isPrime(number);
 
-    const userAnswer = readlineSync.question(`Question: ${number}
-Your answer: `);
+    const userAnswer = readlineSync.question(`Question: ${number}  \nYour answer: `);
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       return;
     }
   }
-  console.log(`Congratulations,${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startPrimeGame();

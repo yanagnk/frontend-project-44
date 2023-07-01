@@ -31,20 +31,18 @@ const startPrgGame = () => {
 
     const hiddenChar = randomArr[charIndex];
 
-    randomArr[charIndex] = '...';
+    randomArr[charIndex] = '..';
 
-    const userAnswer = readlineSync.question(`Question: ${randomArr}
-Your answer: `);
+    const userAnswer = readlineSync.question(`Question: ${randomArr.join(' ')} \nYour answer: `);
 
     if (Number(userAnswer) === hiddenChar) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenChar}'.
-Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenChar}'. \nLet's try again, ${userName}!`);
       return;
     }
   }
-  console.log(`Congratulations,${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 startPrgGame();
