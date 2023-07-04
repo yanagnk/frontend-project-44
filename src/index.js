@@ -1,23 +1,20 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
-import _ from 'lodash';
 
-const startEvenGame = () => {
+const startGame = (playGame, task) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}`);
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log(task);
 
   for (let i = 1; i <= 3; i += 1) {
-    const number = _.random(1, 100);
-    const isCorrect = (num) => ((num % 2 === 0) ? 'yes' : 'no');
-    const correctAnswer = isCorrect(number);
+    const [question, correctAnswer] = playGame();
 
-    const userAnswer = readlineSync.question(`Question: ${number}  \nYour answer: `);
+    console.log(`Question: ${question}`);
+
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
@@ -29,4 +26,4 @@ const startEvenGame = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-startEvenGame();
+export default startGame;
