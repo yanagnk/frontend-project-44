@@ -1,20 +1,18 @@
-/* eslint-disable import/extensions */
-import _ from 'lodash';
-import startGame from '../index.js';
+import { startGame, randomNumber } from '../index.js';
 
 const taskEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isCorrect = (num) => ((num % 2 === 0) ? 'yes' : 'no');
+const isEven = (num) => (num % 2 === 0);
 
-const isEven = () => {
-  const number = _.random(1, 100);
+const getEvenResult = () => {
+  const number = randomNumber(1, 100);
   const questionEven = number;
-  const correctAnswerEven = isCorrect(number);
+  const correctAnswerEven = isEven(number) ? 'yes' : 'no';
   return [questionEven, correctAnswerEven];
 };
 
 const startEvenGame = () => {
-  startGame(isEven, taskEven);
+  startGame(getEvenResult, taskEven);
 };
 
 export default startEvenGame;

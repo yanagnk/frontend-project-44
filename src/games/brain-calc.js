@@ -1,36 +1,29 @@
-/* eslint-disable import/extensions */
-import _ from 'lodash';
-import startGame from '../index.js';
+import { startGame, randomNumber } from '../index.js';
 
 const taskCalc = 'What is the result of the expression?';
 
 const calculatedExpression = (num1, num2, operator) => {
-  let result;
   switch (operator) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
     case '*':
-      result = num1 * num2;
-      break;
+      return num1 * num2;
     default:
-      console.log('Error');
+      return null;
   }
-  return result;
 };
 
 const randomOperator = () => {
   const operators = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * operators.length);
+  const randomIndex = randomNumber(0, operators.length);
   return operators[randomIndex];
 };
 
 const getCalcResult = () => {
-  const number1 = _.random(1, 100);
-  const number2 = _.random(1, 100);
+  const number1 = randomNumber(1, 100);
+  const number2 = randomNumber(1, 100);
 
   const newOperator = randomOperator();
 

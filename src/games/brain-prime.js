@@ -1,22 +1,23 @@
-/* eslint-disable import/extensions */
-import _ from 'lodash';
-import startGame from '../index.js';
+import { startGame, randomNumber } from '../index.js';
 
 const taskPrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  for (let i = 2; i <= num / 2; i += 1) {
-    if ((num % i === 0) || (num === 1)) {
-      return 'no';
+  if (num < 2) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const getPrimeResult = () => {
-  const number = _.random(1, 100);
+  const number = randomNumber(1, 100);
 
-  const correctAnswerPrime = isPrime(number);
+  const correctAnswerPrime = isPrime(number) ? 'yes' : 'no';
 
   const questionPrime = number;
 

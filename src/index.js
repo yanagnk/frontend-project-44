@@ -9,7 +9,9 @@ const startGame = (playGame, task) => {
 
   console.log(task);
 
-  for (let i = 1; i <= 3; i += 1) {
+  const roundCount = 3;
+
+  for (let i = 0; i < roundCount; i += 1) {
     const [question, correctAnswer] = playGame();
 
     console.log(`Question: ${question}`);
@@ -26,4 +28,6 @@ const startGame = (playGame, task) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default startGame;
+const randomNumber = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
+
+export { startGame, randomNumber };
