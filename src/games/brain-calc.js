@@ -17,7 +17,7 @@ const calculatedExpression = (num1, num2, operator) => {
 
 const randomOperator = () => {
   const operators = ['+', '-', '*'];
-  const randomIndex = randomNumber(0, operators.length);
+  const randomIndex = randomNumber(0, 2);
   return operators[randomIndex];
 };
 
