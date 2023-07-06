@@ -26,23 +26,24 @@ make install
 
 ## Demonstrations
 
-<script async id="asciicast-etmjQS40D6NXyipfEX6wRXyYP" src="https://asciinema.org/a/etmjQS40D6NXyipfEX6wRXyYP.js"></script>
+[![asciicast](https://asciinema.org/a/594711.svg)](https://asciinema.org/a/594711)
 
 - ### Even or Odd
 
-<script async id="asciicast-Q8GkUS3tG69sRCJwK5KW4choE" src="https://asciinema.org/a/Q8GkUS3tG69sRCJwK5KW4choE.js"></script>
+[![asciicast](https://asciinema.org/a/594705.svg)](https://asciinema.org/a/594705)
 
 - ### Calculator
 
-<script async id="asciicast-YZpPgHliQyrFklE9NYgvL1W0u" src="https://asciinema.org/a/YZpPgHliQyrFklE9NYgvL1W0u.js"></script>
+[![asciicast](https://asciinema.org/a/594706.svg)](https://asciinema.org/a/594706)
 
 - ### Greatest Common Divisor
 
-<script async id="asciicast-tYj4tnQ77cqS5LeyV0YaBR41i" src="https://asciinema.org/a/tYj4tnQ77cqS5LeyV0YaBR41i.js"></script>
+[![asciicast](https://asciinema.org/a/594707.svg)](https://asciinema.org/a/594707)
 
 - ### Progression
 
-<script async id="asciicast-lJd53U9rtNnFbOZf3bumHTlwX" src="https://asciinema.org/a/lJd53U9rtNnFbOZf3bumHTlwX.js"></script>
+[![asciicast](https://asciinema.org/a/594708.svg)](https://asciinema.org/a/594708)
 
 - ### Prime Number
-<script async id="asciicast-Hg1ZalAvVF5x8i6UNDavbdxq0" src="https://asciinema.org/a/Hg1ZalAvVF5x8i6UNDavbdxq0.js"></script>
+
+[![asciicast](https://asciinema.org/a/594710.svg)](https://asciinema.org/a/594710)
