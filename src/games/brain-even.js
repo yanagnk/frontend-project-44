@@ -1,10 +1,11 @@
-import { startGame, randomNumber } from '../index.js';
+import startGame from '../index.js';
+import randomNumber from '../utils.js';
 
 const taskEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => (num % 2 === 0);
 
-const getEvenResult = () => {
+const getEvenRoundData = () => {
   const number = randomNumber(1, 100);
   const questionEven = number;
   const correctAnswerEven = isEven(number) ? 'yes' : 'no';
@@ -12,7 +13,7 @@ const getEvenResult = () => {
 };
 
 const startEvenGame = () => {
-  startGame(getEvenResult, taskEven);
+  startGame(getEvenRoundData, taskEven);
 };
 
 export default startEvenGame;

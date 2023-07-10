@@ -1,36 +1,35 @@
-import { startGame, randomNumber } from '../index.js';
+import startGame from '../index.js';
+import randomNumber from '../utils.js';
 
 const taskPrg = 'What number is missing in the progression?';
 
-const getPrgResult = () => {
-  const getRandomArr = () => {
-    const number = randomNumber(1, 100);
+const getProgression = (first, charCount, step) => {
+  const chars = [];
+  for (let i = 0; i < charCount; i += 1) {
+    chars.push(first + i * step);
+  }
+  return chars;
+};
 
-    const result = [number];
-    const step = randomNumber(2, 9);
-    const randomQuantity = randomNumber(5, 10);
+const charCount = randomNumber(5, 10);
 
-    for (let j = 0; j < randomQuantity; j += 1) {
-      result.push(result[j] + step);
-    }
-    return result;
-  };
+const getPrgRoundData = () => {
+  const first = randomNumber(1, 100);
+  const step = randomNumber(2, 9);
+  const charIndex = randomNumber(0, charCount);
+  const progression = getProgression(first, charCount, step);
 
-  const randomArr = getRandomArr();
+  const hiddenCharPrg = String(progression[charIndex]);
 
-  const charIndex = randomNumber(0, (randomArr.length - 1));
+  progression[charIndex] = '..';
 
-  const hiddenCharPrg = String(randomArr[charIndex]);
-
-  randomArr[charIndex] = '..';
-
-  const questionPrg = `${randomArr.join(' ')}`;
+  const questionPrg = `${progression.join(' ')}`;
 
   return [questionPrg, hiddenCharPrg];
 };
 
 const startPrgGame = () => {
-  startGame(getPrgResult, taskPrg);
+  startGame(getPrgRoundData, taskPrg);
 };
 
 export default startPrgGame;

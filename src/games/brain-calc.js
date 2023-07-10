@@ -1,4 +1,5 @@
-import { startGame, randomNumber } from '../index.js';
+import startGame from '../index.js';
+import randomNumber from '../utils.js';
 
 const taskCalc = 'What is the result of the expression?';
 
@@ -11,17 +12,17 @@ const calculatedExpression = (num1, num2, operator) => {
     case '*':
       return num1 * num2;
     default:
-      return null;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
-const randomOperator = () => {
-  const operators = ['+', '-', '*'];
-  const randomIndex = randomNumber(0, 2);
-  return operators[randomIndex];
-};
+const getCalcRoundData = () => {
+  const randomOperator = () => {
+    const operators = ['+', '-', '*'];
+    const randomIndex = randomNumber(0, 2);
+    return operators[randomIndex];
+  };
 
-const getCalcResult = () => {
   const number1 = randomNumber(1, 100);
   const number2 = randomNumber(1, 100);
 
@@ -35,7 +36,7 @@ const getCalcResult = () => {
 };
 
 const startCalcGame = () => {
-  startGame(getCalcResult, taskCalc);
+  startGame(getCalcRoundData, taskCalc);
 };
 
 export default startCalcGame;
