@@ -5,7 +5,7 @@ const taskPrg = 'What number is missing in the progression?';
 
 const getProgression = (first, charCount, step) => {
   const chars = [];
-  for (let i = 0; i < charCount; i += 1) {
+  for (let i = 0; i <= charCount; i += 1) {
     chars.push(first + i * step);
   }
   return chars;
