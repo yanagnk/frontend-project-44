@@ -3,9 +3,7 @@ import randomNumber from '../utils.js';
 
 const taskGcd = 'Find the greatest common divisor of given numbers.';
 
-const getGcd = () => {
-  let x;
-  let y;
+const getGcd = (x, y) => {
 
   while (y !== 0) {
     const remainder = x % y;
