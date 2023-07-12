@@ -17,16 +17,13 @@ const calculatedExpression = (num1, num2, operator) => {
 };
 
 const getCalcRoundData = () => {
-  const randomOperator = () => {
-    const operators = ['+', '-', '*'];
-    const randomIndex = randomNumber(0, 2);
-    return operators[randomIndex];
-  };
-
   const number1 = randomNumber(1, 100);
   const number2 = randomNumber(1, 100);
 
-  const newOperator = randomOperator();
+  const operators = ['+', '-', '*'];
+  const randomIndex = randomNumber(0, 2);
+
+  const newOperator = operators[randomIndex];
 
   const correctAnswerCalc = String(calculatedExpression(number1, number2, newOperator));
 

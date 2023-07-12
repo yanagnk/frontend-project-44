@@ -6,9 +6,8 @@ const taskEven = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (num) => (num % 2 === 0);
 
 const getEvenRoundData = () => {
-  const number = randomNumber(1, 100);
-  const questionEven = number;
-  const correctAnswerEven = isEven(number) ? 'yes' : 'no';
+  const questionEven = randomNumber(1, 100);
+  const correctAnswerEven = isEven(questionEven) ? 'yes' : 'no';
   return [questionEven, correctAnswerEven];
 };
 
